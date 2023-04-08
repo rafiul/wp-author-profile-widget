@@ -131,7 +131,7 @@ $wp_customize->add_control( 'wpauthor_social_top_margin', array(
 $wp_customize->add_setting( 'wpauthor_designation', array(
     'transport' => 'refresh',
     'type' => 'option',
-    'default' => '15px',
+    'default' => '18px',
     'sanitize_callback' => 'sanitize_text_field',
 ) );
 
@@ -139,6 +139,38 @@ $wp_customize->add_control( 'wpauthor_designation', array(
     'type' => 'number',
     'section' => 'wpauthor_general_section', // Add a default or your own section
     'label' => __( 'Designation Font Size (px)','wpauthor' ),
+    'priority' => 12,
+) );
+//Author Title
+
+$wp_customize->add_setting( 'wpauthor_title', array(
+    'transport' => 'refresh',
+    'type' => 'option',
+    'default' => '22px',
+    'sanitize_callback' => 'sanitize_text_field',
+) );
+
+
+$wp_customize->add_control( 'wpauthor_title', array(
+    'type' => 'number',
+    'section' => 'wpauthor_general_section', // Add a default or your own section
+    'label' => __( 'Author Title Font Size (px)','wpauthor' ),
+    'priority' => 12,
+) );
+//Author Bio
+
+$wp_customize->add_setting( 'wpauthor_bio', array(
+    'transport' => 'refresh',
+    'type' => 'option',
+    'default' => '16px',
+    'sanitize_callback' => 'sanitize_text_field',
+) );
+
+
+$wp_customize->add_control( 'wpauthor_bio', array(
+    'type' => 'number',
+    'section' => 'wpauthor_general_section', // Add a default or your own section
+    'label' => __( 'Author Bio Font Size (px)','wpauthor' ),
     'priority' => 12,
 ) );
 
@@ -156,7 +188,9 @@ $wp_customize->add_control( 'wpauthor_designation', array(
              .about-footer .more { font-size: <?php echo get_option('wpauthor_text_font_size','16px') . 'px !important'; ?> ; }
              .about-footer .social-icons a i { font-size: <?php echo get_option('wpauthor_social_font_size','16px') . 'px !important'; ?> ; }
              .about-footer ul.social-icons { margin-top: <?php echo get_option('wpauthor_social_top_margin','15px') . 'px !important'; ?> ; }
-             .widget_wp_author_widget .designation { font-size: <?php echo get_option('wpauthor_designation','14px') . 'px !important'; ?> ; }
+             .widget_wp_author_widget .waw-author-designation { font-size: <?php echo get_option('wpauthor_designation','18px') . 'px !important'; ?> ; }
+             .widget_wp_author_widget .waw-author-title a { font-size: <?php echo get_option('wpauthor_title','22px') . 'px !important'; ?> ; }
+             .widget_wp_author_widget .waw-author-bio p { font-size: <?php echo get_option('wpauthor_bio','16px') . 'px'; ?> ; }
          </style>
     <?php
 }

@@ -33,14 +33,18 @@ class Wp_Author_Widget extends WP_Widget {
                         <?php echo get_avatar( get_the_author_meta( 'ID' ), 180 ); ?>
                     </figure>
                     <div class="post_header_title">
-                        <h6 class="blog-title"><a href="#"><?php echo get_the_author_meta( 'first_name' ) ; ?></a></h6>
-                        <div class="designation">
+                        <h6 class="waw-author-title">
+							<a href="#"><?php echo get_the_author_meta( 'first_name' ) ; ?></a>
+						</h6>
+                        <div class="waw-author-designation">
 							<?php if ( get_the_author_meta( 'designation' ) ) { ?>
 							<?php the_author_meta( 'designation' ); ?>
 							<?php }?>
 						</div>
                     </div>
-                    <p><?php echo wpautop( get_the_author_meta( 'description' ) ); ?></p>
+                    <div class="waw-author-bio">
+						<?php echo wpautop( get_the_author_meta( 'description' ) ); ?>
+					</div>
 					<div class="about-footer">
 						<a href="<?php echo get_author_posts_url( get_the_author_meta('ID')); ?>" class="more"><?php echo esc_attr(get_option( 'wpauthor_label', '' )) ;?></a>
 						<ul class="social-icons list-inline">
