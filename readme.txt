@@ -33,7 +33,13 @@ You're done! :)
 
 == Changelog ==
 
+= 1.1 =
+* Release Date - 08 April, 2023*
+* Added  more social option
+* Added style customization option
+
 = 1.0 =
 *Release Date - 24th July, 2018*
+
 
 * Initial Release
